@@ -21,7 +21,7 @@ public class UnitDigi{
         int unitDigit2 = getUnitDigit(base2, exponent2);
         
         int productUnitDigit = (unitDigit1 * unitDigit2) % 10;
-        
+        // print the unit digit
         System.out.println("The unit's digit in the product is: " + productUnitDigit);
 
         scanner.close();

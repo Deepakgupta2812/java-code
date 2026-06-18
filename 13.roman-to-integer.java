@@ -1,0 +1,33 @@
+/*
+ * @lc app=leetcode id=13 lang=java
+ *
+ * [13] Roman to Integer
+ */
+
+// @lc code=start
+class Solution {
+    public int romanToInt(String s) {
+        Map<Character, Integer> map = new HashMap<>();
+        map.put('I', 1);    
+        map.put('V', 5);
+        map.put('X', 10);
+        map.put('L', 50);
+        map.put('C', 100);
+        map.put('D', 500);
+        map.put('M', 1000);
+        char[] chars = s.toCharArray();
+        int sum = 0;
+        int i,j;
+        for(i=0;i<chars.length-1;i++){
+            if(map.get(chars[i])<map.get(chars[i+1])){
+                sum -= map.get(chars[i]);
+            }else{
+                sum += map.get(chars[i]);
+            }
+        }
+        sum += map.get(chars[i]);
+        return sum;
+    }
+}
+// @lc code=end
+
